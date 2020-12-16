@@ -7,7 +7,6 @@ import { htmlToReact, withPrefix } from '../utils';
 
 export default class PhotoPage extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <Layout {...this.props}>
         <header className='post-header inner-sm'>
