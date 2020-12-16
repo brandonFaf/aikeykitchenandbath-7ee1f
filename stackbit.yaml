@@ -234,6 +234,19 @@ models:
           type: model
           models:
             - action
+  photo:
+    type: object
+    label: Photo
+    labelField: photo
+    fields:
+      - type: image
+        name: photo
+        label: Photo
+        description: The photo to be shown.
+      - type: string
+        name: caption
+        label: Caption
+        description: The caption to be displayed with the Photo.
   advanced:
     type: page
     label: Advanced Page
@@ -298,6 +311,37 @@ models:
         name: subtitle
         label: Subtitle
         description: The text shown just below the page title.
+      - type: string
+        name: excerpt
+        label: Excerpt
+        description: The excerpt of the page displayed in meta data.
+      - type: image
+        name: img_path
+        label: Image
+        description: The image shown below the page title and subtitle.
+  photoPage:
+    type: page
+    label: PhotoPage
+    layout: photoPage
+    exclude: posts/**
+    fields:
+      - type: string
+        name: title
+        label: Title
+        description: The title of the page
+        required: true
+      - type: string
+        name: blurb
+        label: Blurb
+        description: Text that would be included before the photos.
+        required: true
+      - type: list
+        name: photos
+        label: Photos
+        description: List of photos to display on the page.
+        items:
+          type: model
+          models: [photo]
       - type: string
         name: excerpt
         label: Excerpt
