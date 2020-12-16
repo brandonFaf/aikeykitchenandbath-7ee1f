@@ -1,8 +1,8 @@
 // First, we must import the schema creator
-import createSchema from 'part:@sanity/base/schema-creator'
+import createSchema from 'part:@sanity/base/schema-creator';
 
 // Then import schema types from any plugins that might expose them
-import schemaTypes from 'all:part:@sanity/base/schema-type'
+import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // Import user defined schema types
 import config from './config.js';
@@ -18,6 +18,8 @@ import section_posts from './section_posts.js';
 import section_form from './section_form.js';
 import action from './action.js';
 import form_field from './form_field.js';
+import photo from './photo.js';
+import photoPage from './photoPage.js';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -39,6 +41,8 @@ export default createSchema({
     section_posts,
     section_form,
     action,
-    form_field
-    ])
-})
+    form_field,
+    photo,
+    photoPage
+  ])
+});
